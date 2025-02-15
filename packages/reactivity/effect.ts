@@ -12,6 +12,7 @@ export let activeEffect: ReactiveEffect | undefined
 export class ReactiveEffect<T = any> {
   /** 副作用を作成する
    * @param fn 副作用の関数
+   * @returns 副作用
    */
   constructor(public fn: () => T) {}
 
