@@ -47,6 +47,7 @@ export function createRenderer(options: RendererOptions) {
   }
 
   const render: RootRenderFunction = (message, container) => {
+    while (container.firstChild) container.removeChild(container.firstChild) // 全消し処理を追加
     const el = renderVNode(message);
     hostInsert(el, container);
   }

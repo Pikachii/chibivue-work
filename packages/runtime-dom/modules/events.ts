@@ -31,8 +31,6 @@ export function patchEvent(
   const invokers = el._vei || (el._vei = {})
   const existingInvoker = invokers[rawName]
 
-  console.log({ rawName, existingInvoker, value })
-
   if (value && existingInvoker) {
     // patch
     existingInvoker.value = value
