@@ -20,6 +20,13 @@ export const nodeOps: Omit<RendererOptions, "patchProp"> = {
    * @param node - ノード
    * @param text - テキスト
    */
+  setText(node, text) {
+    node.nodeValue = text;
+  },
+  /** テキストを設定する
+   * @param node - ノード
+   * @param text - テキスト
+   */
   setElementText(node, text) {
     node.textContent = text;
   },

@@ -1,4 +1,4 @@
-import { VNode, VNodeProps } from "./vnode";
+import { createVNode, VNode, VNodeProps } from "./vnode";
 
 /** ハイパーテキスト関数
  * @param type - タイプ
@@ -11,5 +11,5 @@ export function h(
   props: VNodeProps,
   children: (string | VNode)[]
 ) {
-  return { type, props: props || {}, children: Array.isArray(children) ? children : [children] }
+  return createVNode(type, props, children);
 }

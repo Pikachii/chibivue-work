@@ -37,22 +37,9 @@ export function createAppAPI<HostElement>(
        * @param rootContainer - ルートコンテナ
        */
       mount(rootContainer: HostElement) {
-        /** セットアップ関数で取得したレンダリング関数 */
-        const componentRender = rootComponent.setup!();
-
-        /** コンポーネントを更新する */
-        const updateComponent = () => {
-          /** レンダリングした仮想DOM */
-          const vNode = componentRender()
-          // ルートコンテナにアプリケーションをマウントする
-          render(vNode, rootContainer)
-        }
-
-        /** コンポーネントを更新する副作用 */
-        const effect = new ReactiveEffect(updateComponent)          
-        // コンポーネントを更新する副作用を実行する
-        effect.run()
-      }
+        // rootCompoonentを渡すだけに変更
+        render(rootComponent, rootContainer)
+      },
     }
 
     return app
